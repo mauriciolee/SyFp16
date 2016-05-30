@@ -11,4 +11,16 @@ package E1;
  */
 public class Cesar {
     
+    public String cifrar (String m, int n) {
+        
+    
+            for (int i = 0 ; <m.length() ; i++ )
+            {
+              char result = m.charArt(i);
+                
+                
+                
+            }
+            
+    }       
 }
