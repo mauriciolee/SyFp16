@@ -18,7 +18,17 @@ public class Cesar {
             {
                 
               
-            resultado = resultado  + (char) ( mensaje.charAt(i) + constante );
+            if  ((int) mensaje.charAt(i) == 10 )
+            {
+                 resultado  = resultado + (mensaje.charAt(i));
+            }
+            else 
+            {
+                
+                resultado =  resultado + (char) (mensaje .charAt(i)+constante);
+            }
+                
+            
                       
                 
                 
@@ -31,11 +41,13 @@ public class Cesar {
     public static void main(String[] args) {
         
         Cesar c = new Cesar();
-        c.cifrar("hola", 3);
-        System.out.println(c.cifrar ("hola", 3));
+        String s =c.cifrar("hola" ,3);
+        System.out.println(s);
+        Cesar a = new Cesar();
+        String b = a.descifrar(s,3);
+        System.out.println(b);
         
-        c.descifrar("", 3);
-        System.out.println("",3));
+       
     }
     
 
