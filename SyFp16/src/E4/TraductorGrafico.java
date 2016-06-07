@@ -5,6 +5,7 @@
  */
 package E4;
 
+import E5.Traductor;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -14,28 +15,49 @@ import java.awt.event.KeyListener;
  * @author danylee
  */
 public class TraductorGrafico extends javax.swing.JFrame {
+ Traductor d;
+    
 
     /**
      * Creates new form TraductorGrafico
      */
     public TraductorGrafico() {
         initComponents();
+        d = new Traductor();
+        d.agregar("hola", "hello");
+        d.agregar("soy", "it");
+        d.agregar("yo", "me");
+        d.agregar("si", "yes");
+        d.agregar("no", "no");
+        d.agregar("oz", "boot");
         traducir.addKeyListener( new KeyAdapter() {
-            String traducido = "";
+            String traducir = "";
+            String traduccion = "";
+            
             @Override
             public void keyTyped(KeyEvent e) {
-             
-             if  (e.getKeyChar()!= ' '   && e.getKeyChar()!= 10)
+             char Key = e.getKeyChar();
+             if  (e.getKeyChar()!= ' '   && e.getKeyChar()!= 8)
              {
-                traducido = traducido +e.getKeyChar();
+                traducir = traducir + Key;
              }
-             else 
-             
-             if (e.getKeyChar() = 8)
+             if(Key == 8)
                 {
-                    traducido = traducido.substring(0, traducido.length()-1 );
+                    traducir = traducir.substring(0, traducir.length()-1);
+                }
+             
+             if (Key == 10 || Key == ' ')
+                {
+                    traduccion = traduccion + d.traducir(traducir);
+                    traducir = "";
                     
                 }
+             meaningWord.setText(traduccion);
+             
+             
+             
+             
+             
              
              
              
@@ -64,8 +86,8 @@ public class TraductorGrafico extends javax.swing.JFrame {
         traducido = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        Textotraducido = new javax.swing.JLabel();
-        Traducirtexto = new javax.swing.JLabel();
+        meaningWord = new javax.swing.JLabel();
+        Traducir = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,9 +99,9 @@ public class TraductorGrafico extends javax.swing.JFrame {
         traducido.setRows(5);
         jScrollPane2.setViewportView(traducido);
 
-        Textotraducido.setText("Textotraducido");
+        meaningWord.setText("meaningWord");
 
-        Traducirtexto.setText("traducirtexto");
+        Traducir.setText("traducir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,20 +118,20 @@ public class TraductorGrafico extends javax.swing.JFrame {
                         .addGap(101, 101, 101)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Traducirtexto))
+                        .addComponent(Traducir))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(92, 92, 92)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(122, 122, 122)
-                        .addComponent(Textotraducido)))
+                        .addComponent(meaningWord)))
                 .addContainerGap(119, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addComponent(Traducirtexto)
+                .addComponent(Traducir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
@@ -117,7 +139,7 @@ public class TraductorGrafico extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Textotraducido, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(meaningWord, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
@@ -162,12 +184,12 @@ public class TraductorGrafico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Textotraducido;
-    private javax.swing.JLabel Traducirtexto;
+    private javax.swing.JLabel Traducir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel meaningWord;
     private javax.swing.JTextArea traducido;
     private javax.swing.JTextArea traducir;
     // End of variables declaration//GEN-END:variables
