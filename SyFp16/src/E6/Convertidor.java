@@ -37,15 +37,10 @@ public class Convertidor {
         cm = cm *d;
         double inch = list.get(s1);
         return cm/inch;
-        
+        }
+        return 0.0;
         
     }
-    
-    return 0.0;
-   
-    
-    
-}
 
 public static void main (String[]args)
 {
@@ -57,6 +52,5 @@ public static void main (String[]args)
     
 }
 
-
-
+}
 
