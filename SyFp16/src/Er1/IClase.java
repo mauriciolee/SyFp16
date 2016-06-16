@@ -9,6 +9,6 @@ package Er1;
  *
  * @author danylee
  */
-public class abstracta {
-    
+public interface IClase {
+    public void print();
 }

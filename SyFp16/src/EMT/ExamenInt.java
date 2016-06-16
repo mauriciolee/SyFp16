@@ -3,23 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Er1;
+package EMT;
 
 /**
  *
  * @author danylee
  */
-public class c1 extends AClase {
-
-    public c1(String descripcion ) {
-        super(descripcion);
-    }
+public interface ExamenInt {
+    public String getHoyNoCircula();
+    public String getByPlaca(String t);
+    public String getTerminacionPlaca(String t);
+    public String getColor(String t);
     
-
+    
+    
+    
+    
     
 }
-
-    
-    
-    
-

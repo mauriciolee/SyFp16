@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class ClaseMain {
     public static void main (String[] args){
-        ArchivoBinario AB = new ArchivoBinario ();
+        ArchivoBinario AB = new ArchivoBinario () {};
         AB.agregar("abrir, desplegar, cerrar");
         List<ArchivoBinario> a;
         a = new ArrayList<ArchivoBinario>();

@@ -9,6 +9,10 @@ package Er1;
  *
  * @author danylee
  */
-public class c2 {
+public class c2 extends AClase {
+
+    public c2(String descripcion) {
+        super(descripcion);
+    }
     
 }

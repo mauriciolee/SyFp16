@@ -13,16 +13,13 @@ import E6.Convertidor;
  */
 public class ClaseMain {
     public static void main (String[]args){
-        ClaseMain j = new ClaseMain();
-        ClaseMain a = new ClaseMain();
-        2 c = new ClaseMain();
+        IClase a = new c1 ("sdsd");
+        AClase b = new c3 ("sdsd");
+        c2 c = new c2 ("sdsd");
         
-        
-        
-        
+        a.print();  
         
     }
-
-    
-    
 }
+
+
