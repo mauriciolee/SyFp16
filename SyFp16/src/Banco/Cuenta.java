@@ -10,10 +10,26 @@ package Banco;
  * @author danylee
  */
 public class Cuenta {
+    int cuenta;
+    int cliente;
+
+    private Cuenta() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getCuenta() {
+        return cuenta;
+    }
+
+    public int getCliente() {
+        return cliente;
+    }
+    
     public double checkSaldo () {
         return saldo;
     }
     public double saldo = 0.0;
+    
          
     
     public void deposito(double dinero)throws WrongAmountException
@@ -44,6 +60,11 @@ public class Cuenta {
     public static void main (String[]args) throws WrongAmountException
     {
         Cuenta x = new Cuenta();
+    }
+
+    public Cuenta(int cuenta, int cliente) {
+        this.cuenta = cuenta;
+        this.cliente = cliente;
     }
         
     
