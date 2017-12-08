@@ -1,17 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package FinalAriel;
 import java.io.*;
 import java.net.*;
 
-/**
- *
- * @author danylee
- */
-public class Cliente {
+public class Cliente{
     public static void main(String[] args) {
         String host = "localhost";
         int port = 1111;
@@ -28,7 +18,7 @@ public class Cliente {
             BufferedOutputStream bos = new BufferedOutputStream (cliente.getOutputStream());
             OutputStreamWriter osw = new OutputStreamWriter (bos);
 
-            osw.write("Soy lee” + ((char)13));
+            osw.write("Soy lee" + ((char)13));
             osw.flush();
 
             int c;
@@ -52,5 +42,3 @@ public class Cliente {
     }
     
 }
-    
-

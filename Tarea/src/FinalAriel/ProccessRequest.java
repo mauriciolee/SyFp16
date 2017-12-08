@@ -1,21 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package FinalAriel;
-
-import java.net.Socket;
-import java.util.Vector;
 import java.io.*;
 import java.net.*;
 import java.util.*;
 
-/**
- *
- * @author danylee
- */
-public class ProccessRequest {
+public class ProccessRequest implements Runnable{
+
     Socket cliente;
     StringBuffer mensaje;
     Vector v;
@@ -54,7 +42,3 @@ public class ProccessRequest {
 
     }
 }
-
-   
-    
-

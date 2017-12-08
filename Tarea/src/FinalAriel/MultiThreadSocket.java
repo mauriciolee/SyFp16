@@ -1,18 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package FinalAriel;
 import java.io.*;
 import java.net.*;
 import java.util.*;
 
-/**
- *
- * @author danylee
- */
-public class MultiThreadSocket {
+public class MultiThreadSocket{
     public static void main(String[] args) {
         Vector v = new Vector();
         try {
@@ -26,7 +16,7 @@ public class MultiThreadSocket {
 
                 clientes = server.accept();
                 ProccessRequest other = new ProccessRequest (clientes,v);
-                Thread t = new Thread ((Runnable) other);
+                Thread t = new Thread (other);
                 t.start();
                 
             }
@@ -40,5 +30,3 @@ public class MultiThreadSocket {
         }
     }
 }
-    
-
